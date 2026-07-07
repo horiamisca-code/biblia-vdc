@@ -1,3 +1,16 @@
+// Înregistrează Service Worker
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => console.log("Service Worker activ."))
+            .catch(err => console.log(err));
+
+    });
+
+}
+
 async function startApp() {
 
     await loadBible();
@@ -30,7 +43,6 @@ async function startApp() {
 
     displayChapter();
 
-    // Actualizează textul butonului
     function updateContinueButton() {
 
         const saved = loadPosition();
@@ -51,7 +63,6 @@ async function startApp() {
 
     updateContinueButton();
 
-    // Când se apasă butonul
     continueButton.addEventListener("click", () => {
 
         const saved = loadPosition();
