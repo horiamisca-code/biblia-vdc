@@ -1,0 +1,42 @@
+[
+    {
+        "name": "Geneza",
+        "chapters": 50
+    },
+    {
+        "name": "Exodul",
+        "chapters": 40
+    },
+    {
+        "name": "Leviticul",
+        "chapters": 27
+    },
+    {
+        "name": "Numeri",
+        "chapters": 36
+    },
+    {
+        "name": "Deuteronomul",
+        "chapters": 34
+    },
+    {
+        "name": "Iosua",
+        "chapters": 24
+    },
+    {
+        "name": "Judecători",
+        "chapters": 21
+    },
+    {
+        "name": "Rut",
+        "chapters": 4
+    },
+    {
+        "name": "1 Samuel",
+        "chapters": 31
+    },
+    {
+        "name": "2 Samuel",
+        "chapters": 24
+    }
+]

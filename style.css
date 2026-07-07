@@ -1,0 +1,185 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",Segoe UI,sans-serif;
+    background:#f2f2f7;
+    color:#111;
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+
+}
+
+header{
+
+    position:sticky;
+    top:0;
+    background:#f2f2f7;
+    padding-bottom:15px;
+    z-index:100;
+
+}
+
+h1{
+
+    text-align:center;
+    font-size:34px;
+    margin-bottom:20px;
+    font-weight:700;
+
+}
+
+/* ========================= */
+/* CĂUTARE */
+/* ========================= */
+
+.search{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-bottom:20px;
+
+}
+
+.search input{
+
+    width:100%;
+    padding:16px;
+    font-size:20px;
+    border:none;
+    border-radius:16px;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.search button{
+
+    width:100%;
+    padding:16px;
+    font-size:20px;
+    font-weight:bold;
+    border:none;
+    border-radius:16px;
+    background:#007AFF;
+    color:white;
+    cursor:pointer;
+
+}
+
+/* ========================= */
+/* SELECTOARE */
+/* ========================= */
+
+.selectors{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    margin-bottom:25px;
+
+}
+
+label{
+
+    display:block;
+    font-size:19px;
+    font-weight:600;
+    margin-bottom:8px;
+
+}
+
+select{
+
+    width:100%;
+    padding:16px;
+    font-size:20px;
+    border:none;
+    border-radius:16px;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+/* ========================= */
+/* CITITOR */
+/* ========================= */
+
+#reader{
+
+    background:white;
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.verse{
+
+    font-size:23px;
+    line-height:1.9;
+    padding:15px;
+    margin-bottom:8px;
+    border-radius:14px;
+
+}
+
+.verse:hover{
+
+    background:#f5f5f5;
+
+}
+
+.verse strong{
+
+    color:#007AFF;
+    font-size:24px;
+
+}
+
+/* ========================= */
+/* REZULTATE CĂUTARE */
+/* ========================= */
+
+#searchResults{
+
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:20px;
+
+}
+
+.searchResult{
+
+    background:white;
+    padding:15px;
+    border-radius:16px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+    cursor:pointer;
+
+}
+
+/* ========================= */
+
+@media(max-width:700px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+}
