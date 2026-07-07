@@ -10,6 +10,7 @@ async function startApp() {
     const book = document.getElementById("book");
     const chapter = document.getElementById("chapter");
     const verse = document.getElementById("verse");
+    const continueButton = document.getElementById("continueButton");
 
     if (saved.book && bible[saved.book]) {
         book.value = saved.book;
@@ -28,6 +29,65 @@ async function startApp() {
     }
 
     displayChapter();
+
+    // Actualizează textul butonului
+    function updateContinueButton() {
+
+        const saved = loadPosition();
+
+        if (saved.book && saved.chapter && saved.verse) {
+
+            continueButton.innerHTML =
+                `📖 Continuă lectura<br><small>${saved.book} ${saved.chapter}:${saved.verse}</small>`;
+
+        } else {
+
+            continueButton.innerHTML =
+                "📖 Continuă de unde ai rămas";
+
+        }
+
+    }
+
+    updateContinueButton();
+
+    // Când se apasă butonul
+    continueButton.addEventListener("click", () => {
+
+        const saved = loadPosition();
+
+        if (!saved.book) return;
+
+        book.value = saved.book;
+
+        loadChapters();
+
+        chapter.value = saved.chapter;
+
+        loadVerses();
+
+        verse.value = saved.verse;
+
+        displayChapter();
+
+        setTimeout(() => {
+
+            const element = document.getElementById("verse-" + saved.verse);
+
+            if (element) {
+
+                element.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+                element.focus();
+
+            }
+
+        }, 100);
+
+    });
 
     setTimeout(() => {
 
@@ -56,6 +116,7 @@ async function startApp() {
         loadVerses();
         displayChapter();
         savePosition();
+        updateContinueButton();
 
     });
 
@@ -64,6 +125,7 @@ async function startApp() {
         loadVerses();
         displayChapter();
         savePosition();
+        updateContinueButton();
 
     });
 
@@ -83,12 +145,14 @@ async function startApp() {
         }
 
         savePosition();
+        updateContinueButton();
 
     });
 
     document.getElementById("goButton").addEventListener("click", () => {
 
         goToReference();
+        updateContinueButton();
 
     });
 
@@ -97,6 +161,7 @@ async function startApp() {
         if (event.key === "Enter") {
 
             goToReference();
+            updateContinueButton();
 
         }
 
